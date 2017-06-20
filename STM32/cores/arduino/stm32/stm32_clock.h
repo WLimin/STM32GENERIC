@@ -62,6 +62,8 @@ inline void delayMicroseconds(uint32_t microseconds){
   while(start + microseconds > micros());
 }
 
+void stm32ScheduleMicros(uint32_t microseconds, void (*callback)());
+
 #ifdef __cplusplus
 }
 #endif
