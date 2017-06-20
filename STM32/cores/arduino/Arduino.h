@@ -106,6 +106,7 @@ void pinMode(uint8_t, uint8_t);
 int analogRead(uint8_t);
 void analogReference(uint8_t mode);
 void analogWrite(uint8_t, int);
+void analogWriteResolution(int bits);
 
 //unsigned long millis(void);
 //unsigned long micros(void);
