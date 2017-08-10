@@ -5,10 +5,10 @@
 #define VARIANT_H
 
 //*************** LED definitions *************************
-#define LED_BUILTIN PC13
+#define LED_BUILTIN PB9
 #define STM32_LED_BUILTIN_ACTIVE_LOW
 
-#define LED0_BUILTIN PC13 // same as LED_BUILTIN
+#define LED0_BUILTIN PB9 // same as LED_BUILTIN
 
 //*************** on board buttons*************************
 

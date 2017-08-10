@@ -10,7 +10,7 @@ version=1.0.0
 
 # STM compile variables
 # ----------------------
-compiler.extra_includes="-I{build.core.path}/stm32" "-I{build.core.path}/usb" "-I{build.system.path}/CMSIS" "-I{build.system.path}/{build.series}/CMSIS_Inc" "-I{build.system.path}/{build.series}/CMSIS_Src" "-I{build.system.path}/{build.series}/HAL_Inc" "-I{build.system.path}/{build.series}/HAL_Src"  "-I{build.system.path}/{build.series}/stm32_chip" 
+compiler.extra_includes="-I{build.core.path}/stm32" "-I{build.core.path}/usb" "-I{build.system.path}/CMSIS" "-I{build.system.path}/{build.series}/CMSIS_Inc" "-I{build.system.path}/{build.series}/CMSIS_Src" "-I{build.system.path}/{build.series}/HAL_Inc" "-I{build.system.path}/{build.series}/HAL_Src"  "-I{build.system.path}/{build.series}/stm32_chip"
 
 compiler.warning_flags=-w
 compiler.warning_flags.none=-w
@@ -159,3 +159,15 @@ tools.serial_upload.path.linux64={runtime.hardware.path}/tools/linux64
 tools.serial_upload.upload.params.verbose=-d
 tools.serial_upload.upload.params.quiet=n
 tools.serial_upload.upload.pattern="{path}/{cmd}" {serial.port.file} {upload.altID} {upload.usbID} "{build.path}/{build.project_name}.bin"
+
+# JLink upload
+tools.jlink_upload.cmd=jlink_upload
+tools.jlink_upload.cmd.windows=jlink_upload.bat
+tools.jlink_upload.cmd.macosx=jlink_upload
+tools.jlink_upload.path={runtime.hardware.path}/tools/win
+tools.jlink_upload.path.macosx={runtime.hardware.path}/tools/macosx
+tools.jlink_upload.path.linux={runtime.hardware.path}/tools/linux
+tools.jlink_upload.path.linux64={runtime.hardware.path}/tools/linux64
+tools.jlink_upload.upload.params.verbose=-d
+tools.jlink_upload.upload.params.quiet=n
+tools.jlink_upload.upload.pattern="{path}/{cmd}" "{build.path}/{build.project_name}.bin" "{upload.device}"

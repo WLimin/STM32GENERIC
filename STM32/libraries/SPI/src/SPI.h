@@ -194,7 +194,7 @@ class SPIClass {
 	uint8_t __attribute__ ((deprecated)) dmaSend(uint8_t *transmitBuf, uint16_t length, bool minc = 1);
 
 
-    SPI_HandleTypeDef spiHandle = {};
+    SPI_HandleTypeDef spiHandle; // = {}; warning: missing initializer for member '__SPI_HandleTypeDef::Init' [-Wmissing-field-initializers]
 
     uint16_t repeatTransmitData = 0XFFFF;
     spi_callback_type callback;
@@ -206,8 +206,8 @@ class SPIClass {
 
     SPISettings settings = {};
 
-    DMA_HandleTypeDef hdma_spi_rx = {};
-    DMA_HandleTypeDef hdma_spi_tx = {};
+	DMA_HandleTypeDef hdma_spi_rx; //= {};
+	DMA_HandleTypeDef hdma_spi_tx; // = {};
 
     GPIO_TypeDef *mosiPort = NULL;
     uint32_t mosiPin = 0;

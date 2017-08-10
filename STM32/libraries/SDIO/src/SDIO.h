@@ -43,9 +43,11 @@
 #endif
 
 // Fix typo for L4
+#if defined (HAL_SD_CardStateTypedef) || defined (HAL_SD_CardStatusTypedef)
 #ifndef HAL_SD_CardStateTypeDef
 #define HAL_SD_CardStateTypeDef HAL_SD_CardStateTypedef
 #define HAL_SD_CardStatusTypeDef HAL_SD_CardStatusTypedef
+#endif
 #endif
 
 /*
